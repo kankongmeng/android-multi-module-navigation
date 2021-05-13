@@ -1,1 +1,16 @@
-include ':app', ':core', ':module.feature.a', ':module.feature.b'
+apply from: "${rootDir}/env.gradle"
+
+include ':app', ':core'
+
+if (!excludeModuleFeatureA) {
+    include ':module.feature.a'
+} else {
+    println("module.feature.a is excluded")
+}
+
+if (!excludeModuleFeatureB) {
+    include ':module.feature.b'
+} else {
+    include ':module.feature.b.noop'
+    println("module.feature.b is excluded")
+}

@@ -1,3 +1,5 @@
+apply from: "${rootDir}/env.gradle"
+
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
@@ -23,6 +25,13 @@ android {
 }
 
 dependencies {
-    implementation project(':module.feature.a')
-    implementation project(':module.feature.b')
+    if (!excludeModuleFeatureA) {
+        implementation project(':module.feature.a')
+    }
+
+    if (!excludeModuleFeatureB) {
+        implementation project(':module.feature.b')
+    } else {
+        implementation project(':module.feature.b.noop')
+    }
 }
