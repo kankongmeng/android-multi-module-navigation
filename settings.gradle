@@ -1,0 +1,1 @@
+include ':app', ':core', ':module.feature.a', ':module.feature.b'
