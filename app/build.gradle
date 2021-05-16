@@ -34,7 +34,5 @@ dependencies {
 
     if (!excludeModuleFeatureB) {
         implementation project(':module.feature.b')
-    } else {
-        implementation project(':module.feature.b.noop')
     }
 }

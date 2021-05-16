@@ -11,6 +11,5 @@ if (!excludeModuleFeatureA) {
 if (!excludeModuleFeatureB) {
     include ':module.feature.b'
 } else {
-    include ':module.feature.b.noop'
     println("module.feature.b is excluded")
 }
