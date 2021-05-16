@@ -26,4 +26,5 @@ android {
 
 dependencies {
     api project(':core')
+    testImplementation project(path: ':core', configuration: 'coreTestDependencies')
 }
